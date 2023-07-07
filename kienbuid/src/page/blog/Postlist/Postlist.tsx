@@ -35,7 +35,16 @@ export default function PostList() {
             Nhưng ngày mốt sẽ có nắng
           </p>
         </div>
-       
+        <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-2 xl:grid-cols-2 xl:gap-8">
+          {postList.map((post) => (
+            <PostItem
+              key={post.id}
+              post={post}
+              handleDelete={handleDelete}
+              // handleStartediting={handleStartediting}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
